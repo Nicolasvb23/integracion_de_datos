@@ -25,8 +25,8 @@ def transform_location_from_csv(ruta_csv):
     response = transform_location(row['x'], row['y'])
     if response.status_code == 200:
       data = response.json()
-      csv_to_transform.at[i, 'Latitud'] = data['x']
-      csv_to_transform.at[i, 'Longitud'] = data['y']
+      csv_to_transform.at[i, 'Latitud'] = data['y']
+      csv_to_transform.at[i, 'Longitud'] = data['x']
     else:
       print(f'Error en fila {i}: {response.status_code}')
   
