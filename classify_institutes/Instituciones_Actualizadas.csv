@@ -1,8 +1,8 @@
 COD_ENSE,Descripción,Comun,Adultos,Especial,Inicial,Primaria,Secundaria
-0,No Aplica,0,0,0,0,0,0
+0,No Aplica,1,0,0,0,0,0
 10,Educación Parvularia,1,0,0,1,0,0
 110,Enseñanza Básica,1,0,0,0,1,0
-160,Educación Básica Común Adultos (Decreto 584/2007),0,1,0,0,1,0
+160,Educación Básica Común Adultos (Decreto 584/2007),1,1,0,0,1,0
 161,Educación Básica Especial Adultos,0,1,1,0,1,0
 163,Escuelas Cárceles (Básica Adultos),0,1,0,0,1,0
 165,Educación Básica Adultos Sin Oficios (Decreto 584/2007),0,1,0,0,1,0
@@ -13,7 +13,7 @@ COD_ENSE,Descripción,Comun,Adultos,Especial,Inicial,Primaria,Secundaria
 214,Educación Especial Trastornos Específicos del Lenguaje,0,0,1,0,0,0
 215,Educación Especial Trastornos Motores,0,0,1,0,0,0
 216,Educación Especial Autismo,0,0,1,0,0,0
-217,Educación Especial Discapacidad Graves Alteraciones en la Capacidad de Relación y Comunicación,0,0,1,0,0,0
+217,Educación Especial Discapacidad Graves Alteraciones en la Capacidad de Relación y Comunicación,1,0,1,0,0,0
 218,Educación Especial Discapacidad Múltiple,0,0,1,0,0,0
 219,Educación Especial Sordoceguera,0,0,1,0,0,0
 299,Opción 4 Programa Integración Escolar,1,0,0,0,0,0

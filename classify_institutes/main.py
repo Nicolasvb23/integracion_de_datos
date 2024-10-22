@@ -14,18 +14,19 @@ def classify_especial(description):
     return int(contains_keywords(description, keywords))
 
 def classify_adultos(description):
-    return int('adultos' in description.lower())
+  keywords = ['Adultos', 'Adulto', 'Adultez', 'Adultas', 'Adulta']
+  return int(contains_keywords(description, keywords))
 
 def classify_comun(description):
     # If it is not 'especial' or 'adultos', it is considered 'común'
-    return int(not (classify_especial(description) or classify_adultos(description)))
+    return int(not (classify_especial(description) or classify_adultos(description)) or contains_keywords(description, ['común', 'comun']))
 
 def classify_inicial(description):
-    keywords = ['Parvularia', 'Inicial']
+    keywords = ['Parvularia', 'Inicial', 'Preescolar']
     return int(contains_keywords(description, keywords))
 
 def classify_primaria(description):
-    keywords = ['Básica', 'Primaria']
+    keywords = ['Básica', 'Primaria', 'Educación General Básica']
     return int(contains_keywords(description, keywords))
 
 def classify_secundaria(description):
