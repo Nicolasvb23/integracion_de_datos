@@ -48,11 +48,13 @@ def procesar_csv(ruta_csv, columnas_direccion, pais_referencia, loading_window):
         # Crear una columna de direcciones combinando las columnas especificadas. Solo tener en cuenta
         # las que no sean nulas y convertirlas a cadena
         df['direccion_completa'] = df[columnas_direccion].apply(lambda x: ' '.join(x.dropna().astype(str)), axis=1)
-        # Añadir columnas para latitud, longitud y estado de procesamiento
-        df['Latitud'] = None
-        df['Longitud'] = None
+        # Añadir columnas para latitud, longitud y estado de procesamiento.
+        # No borrar datos si es que ya hay columnas con esos nombres
+        if 'Latitud' not in df.columns:
+            df['Latitud'] = None
+        if 'Longitud' not in df.columns:
+            df['Longitud'] = None
         df['Intento'] = None
-        df['Procesado'] = False
         
     # Tamaño de los bloques para procesar
     batch_size = 100
@@ -63,13 +65,12 @@ def procesar_csv(ruta_csv, columnas_direccion, pais_referencia, loading_window):
     for i in range(0, total_filas, batch_size):
         batch = df[i:i + batch_size]
         for idx, row in batch.iterrows():
-            if not row['Procesado']:
+            if pd.isnull(row['Longitud']) or pd.isnull(row['Latitud']):
                 latitud, longitud, intento = estrategia.procesar(row)
                 print(f"Procesando fila {idx}: {row['direccion_completa']} -> {latitud}, {longitud} (Intento {intento})")
                 df.at[idx, 'Latitud'] = latitud
                 df.at[idx, 'Longitud'] = longitud
                 df.at[idx, 'Intento'] = intento
-                df.at[idx, 'Procesado'] = True
             else:
                 print(f"Saltando fila {idx}: {row['direccion_completa']} (ya procesada)")
 
@@ -81,7 +82,6 @@ def procesar_csv(ruta_csv, columnas_direccion, pais_referencia, loading_window):
     # Guardar el archivo final
     nombre_archivo = os.path.basename(ruta_csv)
     nombre_salida = os.path.join(output_dir, f"procesado_{nombre_archivo[:-4]}_{time.strftime('%Y%m%d-%H%M%S')}.csv")
-    df.drop(columns=['Procesado'], inplace=True)
     df.to_csv(nombre_salida, index=False)
 
     # Eliminar el archivo temporal
