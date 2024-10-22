@@ -1,0 +1,45 @@
+COD_ENSE,Descripción,Comun,Adultos,Especial,Inicial,Primaria,Secundaria
+0,No Aplica,1,0,0,0,0,0
+10,Educación Parvularia,1,0,0,1,0,0
+110,Enseñanza Básica,1,0,0,0,1,0
+160,Educación Básica Común Adultos (Decreto 584/2007),1,1,0,0,1,0
+161,Educación Básica Especial Adultos,0,1,1,0,1,0
+163,Escuelas Cárceles (Básica Adultos),0,1,0,0,1,0
+165,Educación Básica Adultos Sin Oficios (Decreto 584/2007),0,1,0,0,1,0
+167,Educación Básica Adultos Con Oficios (Decreto 584/2007 y 999/2009),0,1,0,0,1,0
+211,Educación Especial Discapacidad Auditiva,0,0,1,0,0,0
+212,Educación Especial Discapacidad Intelectual,0,0,1,0,0,0
+213,Educación Especial Discapacidad Visual,0,0,1,0,0,0
+214,Educación Especial Trastornos Específicos del Lenguaje,0,0,1,0,0,0
+215,Educación Especial Trastornos Motores,0,0,1,0,0,0
+216,Educación Especial Autismo,0,0,1,0,0,0
+217,Educación Especial Discapacidad Graves Alteraciones en la Capacidad de Relación y Comunicación,1,0,1,0,0,0
+218,Educación Especial Discapacidad Múltiple,0,0,1,0,0,0
+219,Educación Especial Sordoceguera,0,0,1,0,0,0
+299,Opción 4 Programa Integración Escolar,1,0,0,0,0,0
+310,Enseñanza Media H-C niños y jóvenes,1,0,0,0,0,1
+360,Educación Media H-C adultos vespertino y nocturno (Decreto N° 190/1975),0,1,0,0,0,1
+361,Educación Media H-C adultos (Decreto N° 12/1987),0,1,0,0,0,1
+362,Escuelas Cárceles (Media Adultos),0,1,0,0,0,1
+363,Educación Media H-C Adultos (Decreto N°1000/2009),0,1,0,0,0,1
+410,Enseñanza Media T-P Comercial Niños y Jóvenes,1,0,0,0,0,1
+460,Educación Media T-P Comercial Adultos (Decreto N° 152/1989),0,1,0,0,0,1
+461,Educación Media T-P Comercial Adultos (Decreto N° 152/1989),0,1,0,0,0,1
+463,Educación Media T-P Comercial Adultos (Decreto N° 1000/2009),0,1,0,0,0,1
+510,Enseñanza Media T-P Industrial Niños y Jóvenes,1,0,0,0,0,1
+560,Educación Media T-P Industrial Adultos (Decreto N° 152/1989),0,1,0,0,0,1
+561,Educación Media T-P Industrial Adultos (Decreto N° 152/1989),0,1,0,0,0,1
+563,Educación Media T-P Industrial Adultos (Decreto N° 1000/2009),0,1,0,0,0,1
+610,Enseñanza Media T-P Técnica Niños y Jóvenes,1,0,0,0,0,1
+660,Educación Media T-P Técnica Adultos (Decreto N° 152/1989),0,1,0,0,0,1
+661,Educación Media T-P Técnica Adultos (Decreto N° 152/1989),0,1,0,0,0,1
+663,Educación Media T-P Técnica Adultos (Decreto N° 1000/2009),0,1,0,0,0,1
+710,Enseñanza Media T-P Agrícola Niños y Jóvenes,1,0,0,0,0,1
+760,Educación Media T-P Agrícola Adultos (Decreto N° 152/1989),0,1,0,0,0,1
+761,Educación Media T-P Agrícola Adultos (Decreto N° 152/1989),0,1,0,0,0,1
+763,Educación Media T-P Agrícola Adultos (Decreto N° 1000/2009),0,1,0,0,0,1
+810,Enseñanza Media T-P Marítima Niños y Jóvenes,1,0,0,0,0,1
+860,Enseñanza Media T-P Marítima Adultos (Decreto N° 152/1989),0,1,0,0,0,1
+863,Enseñanza Media T-P Marítima Adultos (Decreto N° 1000/2009),0,1,0,0,0,1
+910,Enseñanza Media Artística Niños y Jóvenes,1,0,0,0,0,1
+963,Enseñanza Media Artística Adultos,0,1,0,0,0,1
