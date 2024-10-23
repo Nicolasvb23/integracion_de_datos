@@ -2,25 +2,25 @@ import requests
 from estrategia_base import EstrategiaBase
 
 PUNTOS_REFERENCIA_URU = {
-  "MONTEVIDEO": (-24.5662505, -62.1510371),
-  "ARTIGAS": (-34.5900973, -58.4662985),
-  "CANELONES": (-33.7779437, -58.5525623),
-  "CERRO LARGO": (-36.9161456, -60.1670221),
-  "COLONIA": (-31.4490399, -69.4195528),
-  "DURAZNO": (-30.5216076, -68.9294279),
-  "FLORES": (-34.6290748, -58.4634771),
-  "FLORIDA": (-34.5322058, -58.4937312),
-  "LAVALLEJA": (-34.6017151, -58.4356876),
-  "MALDONADO": (-31.4141603, -64.1327023),
-  "PAYSANDÚ": (-29.41830645, -66.8818875888676),
-  "RÍO NEGRO": (-40.4811973, -67.6145911),
-  "RIVERA": (-37.1605304, -63.2417835),
-  "ROCHA": (-37.1460611, -60.9773386),
-  "SALTO": (-34.2917828, -60.2544888),
-  "SAN JOSÉ": (-26.8012401, -66.0698568),
-  "SORIANO": (-34.6422783, -58.6660544),
-  "TACUAREMBÓ": (-27.0351697, -55.2329551),
-  "TREINTA Y TRES": (-34.6404554, -58.6655971)
+    "TACUAREMBÓ": (-32.166667, -55.5),
+    "PAYSANDÚ": (-32.3217257, -58.0892136),
+    "RÍO NEGRO": (-32.7257419, -57.387578),
+    "FLORIDA": (-33.833333, -55.916667),
+    "SAN JOSÉ": (-34.455, -56.616944),
+    "MONTEVIDEO": (-34.9058916, -56.1913095),
+    "COLONIA": (-34.4698592, -57.8433679),
+    "RIVERA": (-30.900058, -55.5408151),
+    "DURAZNO": (-33.0833329, -56.0833331),
+    "TREINTA Y TRES": (-33.0, -54.25),
+    "FLORES": (-33.6518845, -56.8393553),
+    "ROCHA": (-34.0, -54.0),
+    "SORIANO": (-33.4921266, -57.7893105),
+    "MALDONADO": (-34.9087162, -54.9582718),
+    "CERRO LARGO": (-32.333333, -54.333333),
+    "SALTO": (-31.3571565, -57.004446),
+    "LAVALLEJA": (-33.9971964, -54.9992242),
+    "ARTIGAS": (-30.6170756, -56.9373451),
+    "CANELONES": (-34.6222482, -55.9903797),
 }
 
 class EstrategiaUruguay(EstrategiaBase):
@@ -88,7 +88,7 @@ class EstrategiaUruguay(EstrategiaBase):
             if response.status_code == 200:
                 data = response.json()
                 if data and len(data) > 0:
-                    return data[0]['puntoX'], data[0]['puntoY']
+                    return data[0]['puntoY'], data[0]['puntoX']
             return None, None
         except Exception as e:
             print(f"Error en la API de Uruguay: {e}")

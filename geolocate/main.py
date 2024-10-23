@@ -54,7 +54,7 @@ def procesar_csv(ruta_csv, columnas_direccion, pais_referencia, loading_window):
             df['Latitud'] = None
         if 'Longitud' not in df.columns:
             df['Longitud'] = None
-        df['Intento'] = None
+        df['EstrategiaLatLong'] = None
         
     # Tamaño de los bloques para procesar
     batch_size = 100
@@ -67,7 +67,7 @@ def procesar_csv(ruta_csv, columnas_direccion, pais_referencia, loading_window):
         for idx, row in batch.iterrows():
             if pd.isnull(row['Longitud']) or pd.isnull(row['Latitud']):
                 latitud, longitud, intento = estrategia.procesar(row)
-                print(f"Procesando fila {idx}: {row['direccion_completa']} -> {latitud}, {longitud} (Intento {intento})")
+                print(f"Procesando fila {idx}: {row['direccion_completa']} -> {latitud}, {longitud} (EstrategiaLatLong {intento})")
                 df.at[idx, 'Latitud'] = latitud
                 df.at[idx, 'Longitud'] = longitud
                 df.at[idx, 'Intento'] = intento
