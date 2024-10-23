@@ -17,25 +17,25 @@ def geolocalizar(ciudad):
 
 # Mapa de ciudades agrupadas por departamento
 DEPARTAMENTOS_UY = {
-  "Montevideo": ["Montevideo"],
-  "Salto": ["Salto"],
-  "Canelones": ["Ciudad de la Costa", "Las Piedras", "Barros Blancos", "Pando", "Salinas", "18 de Mayo", "La Paz", "Canelones", "Santa Lucia", "Progreso", "Paso Carrasco", "Joaquin Suarez", "General Liber Seregni", "Toledo", "Parque del Plata", "Atlantida", "San Ramon", "Sauce", "Tala"],
-  "Paysandu": ["Paysandu", "Guichon"],
-  "Maldonado": ["Maldonado", "Punta del Este", "Piriapolis", "San Carlos", "Pan de Azucar"],
-  "Rivera": ["Rivera", "Tranqueras"],
+  "Montevideo": ["Montevideo, Montevideo"],
+  "Salto": ["Salto, Salto"],
+  "Canelones": ["Ciudad de la Costa", "Las Piedras", "Barros Blancos", "Pando", "Salinas", "18 de Mayo", "La Paz", "Canelones, Canelones", "Santa Lucia", "Progreso", "Paso Carrasco", "Joaquin Suarez", "General Liber Seregni", "Toledo", "Parque del Plata", "Atlantida", "San Ramon", "Sauce", "Tala"],
+  "Paysandu": ["Paysandu, Paysandu", "Guichon"],
+  "Maldonado": ["Maldonado, Maldonado", "Punta del Este", "Piriapolis", "San Carlos", "Pan de Azucar"],
+  "Rivera": ["Rivera, Rivera", "Tranqueras"],
   "Cerro largo": ["Melo", "Rio Branco"],
-  "Artigas": ["Artigas", "Bella Union"],
+  "Artigas": ["Artigas, Artigas", "Bella Union"],
   "Soriano": ["Mercedes", "Dolores", "Cardona"],
   "Lavalleja": ["Minas", "Jose Pedro Varela"],
   "San Jose": ["San Jose de Mayo", "Ciudad del Plata", "Libertad"],
-  "Durazno": ["Durazno", "Sarandi del Yi"],
-  "Florida": ["Florida", "Sarandi Grande"],
-  "Treinta y tres": ["Treinta y Tres"],
+  "Durazno": ["Durazno, Durazno", "Sarandi del Yi"],
+  "Florida": ["Florida, Florida", "Sarandi Grande"],
+  "Treinta y tres": ["Treinta y Tres, Treinta y tres"],
   "Colonia": ["Colonia del Sacramento", "Carmelo", "Nueva Helvecia", "Juan Lacaze", "Rosario", "Nueva Palmira", "Tarariras"],
-  "Rocha": ["Rocha", "Chuy", "Lascano", "Castillos", "La Paloma"],
+  "Rocha": ["Rocha, Rocha", "Chuy", "Lascano", "Castillos", "La Paloma"],
   "Rio negro": ["Fray Bentos", "Young"],
   "Flores": ["Trinidad"],
-  "Tacuarembo": ["Tacuarembo", "Paso de los Toros"]
+  "Tacuarembo": ["Tacuarembo, Tacuarembo", "Paso de los Toros"]
 }
 
 LAT_LONG_CIUDADES = {
@@ -74,7 +74,7 @@ def procesar_csv(ruta_csv):
       if lat_ciudad is not None and lon_ciudad is not None:
         distancia = medir_distancia(latitud, longitud, lat_ciudad, lon_ciudad)
         print("Distancia a", ciudad, ":", distancia)
-        if distancia <= 20:
+        if distancia <= 15:
           df.at[idx, 'Ambito'] = 'Urbano'
           encontrado = True
           break
@@ -89,7 +89,8 @@ def procesar_csv(ruta_csv):
   df.to_csv(ruta_csv[:-4] + "_ambito.csv", index=False)
 
 # Ejemplo de uso
-ruta_csv = "../output/ces_uy.csv"
+ruta_csv = "../output/privados_uy.csv"
 procesar_csv(ruta_csv)
 
-
+ruta_csv = "../output/ces_uy.csv"
+procesar_csv(ruta_csv)
